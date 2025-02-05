@@ -1,6 +1,5 @@
 import { css } from "@mui/material";
 import type { NextPage } from "next";
-import PageTitle from "../src/components/PageTitle";
 import ThemeUpdater from "../src/components/ThemeUpdater";
 
 const Home: NextPage = () => {
@@ -14,7 +13,6 @@ const Home: NextPage = () => {
         height: 100vh;
       `}
     >
-      <PageTitle />
       <ThemeUpdater />
     </main>
   );
