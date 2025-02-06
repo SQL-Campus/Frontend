@@ -1,0 +1,42 @@
+.root {
+  display: flex;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  margin-left: 250px; /* Match the width of your navigation bar */
+  padding: 20px;
+  width: 100%;
+}
+
+/* Ensure the footer stays at the bottom */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Adjust based on your footer's height */
+  background-color: #f5f5f5;
+  padding: 16px;
+}
+
+/* Ensure content doesn't hide behind the footer */
+main {
+  margin-bottom: 60px; /* Match the footer's height */
+}
+
+/* Ensure the navigation bar doesn't overlap content */
+.navigationBar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 250px; /* Adjust based on your navigation bar's width */
+  background-color: #ffffff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure the main content doesn't overlap with the navigation bar */
+.main-content {
+  margin-left: 250px; /* Match the navigation bar's width */
+}

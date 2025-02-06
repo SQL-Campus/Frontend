@@ -1,16 +1,22 @@
-import { FC } from "react";
-import { EmotionCache } from "@emotion/react";
-import { AppProps } from "next/app";
-import PageProvider from "../src/components/helpers/PageProvider";
+import { NextPage } from 'next';
+import { AppProps } from 'next/app';
+import NavigationBar from '../src/components/NavigationBar';
+import MUIThemeProvider from '../src/components/helpers/MUIThemeProvider';
+import { appWithTranslation } from 'next-i18next';
 
-export interface MUIAppProps extends AppProps {
-  emotionCache?: EmotionCache;
-}
+const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
+  return (
+    <>
+      <div className="root">
+        <MUIThemeProvider>
+          <NavigationBar />
+            <main className="content">
+              <Component {...pageProps} />
+            </main>
+        </MUIThemeProvider>
+      </div>
+    </>
+  );
+};
 
-const App: FC<MUIAppProps> = ({ Component, pageProps, emotionCache }) => (
-  <PageProvider emotionCache={emotionCache}>
-    <Component {...pageProps} />
-  </PageProvider>
-);
-
-export default App;
+export default appWithTranslation(MyApp);
